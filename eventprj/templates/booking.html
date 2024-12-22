@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Booking
+{% endblock %}
+
+{% block content %}
+<div class="container p-5 d-flex justify-content-center align-items-center min-vh-100" style="margin-left: 230px;">
+    <div class="card shadow-lg rounded" style="width: 100%; max-width: 600px;">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-4" style="font-family: 'Roboto', sans-serif; margin-top: 5px; margin-bottom: 30px;">Book Your Events</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
